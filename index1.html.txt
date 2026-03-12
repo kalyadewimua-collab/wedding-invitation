@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Ricko & Amel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#f6f4ef,#efe8df,#e8e0d6);
+color:#333;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* COVER */
+
+.cover{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url('background.jpg');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+
+}
+
+/* NAMA */
+
+.nama{
+
+font-family:'Great Vibes',cursive;
+
+font-size:90px;
+
+letter-spacing:3px;
+
+text-shadow:0 5px 20px rgba(0,0,0,0.6);
+
+margin:10px;
+
+}
+
+/* BUTTON */
+
+button{
+
+padding:12px 30px;
+
+border:none;
+
+background:#c6a86b;
+
+color:white;
+
+border-radius:30px;
+
+font-size:16px;
+
+cursor:pointer;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+
+}
+
+/* SECTION CARD */
+
+section{
+
+background:rgba(255,255,255,0.75);
+
+backdrop-filter:blur(10px);
+
+margin:40px auto;
+
+padding:60px 30px;
+
+max-width:900px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+/* JUDUL */
+
+h2{
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:20px;
+
+}
+
+/* COUNTDOWN */
+
+#countdown{
+
+font-size:22px;
+
+margin-top:20px;
+
+}
+
+/* GALERI */
+
+.gallery{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.gallery img{
+
+width:250px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+/* REKENING */
+
+.rekening{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+display:inline-block;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+/* DAUN */
+
+.daun{
+
+position:fixed;
+
+top:-20px;
+
+font-size:22px;
+
+animation:jatuh linear infinite;
+
+}
+
+@keyframes jatuh{
+
+0%{
+transform:translateY(-10px) rotate(0deg);
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- COVER -->
+
+<div class="cover">
+
+<h3>The Wedding Of</h3>
+
+<h1 class="nama">Ricko & Amel</h1>
+
+<p>Kepada Yth</p>
+
+<h3 id="namaTamu"></h3>
+
+<div id="countdown"></div>
+
+<br>
+
+<button onclick="bukaUndangan()">Buka Undangan</button>
+
+</div>
+
+<audio id="musik" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<div id="isi">
+
+<section>
+
+<h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+
+<p>
+
+"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+untukmu pasangan dari jenismu sendiri supaya kamu merasa tenteram
+kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+
+<br><br>
+
+(QS. Ar-Rum:21)
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Mempelai</h2>
+
+<p>
+
+<b>Ricko Ardisaputra Setiarto</b><br>
+Putra dari Bapak Kusnadi Setiarto & Ibu Maryati
+
+</p>
+
+<p>
+
+<b>Khoirani Amalia Dewi</b><br>
+Putri dari Bapak Zuchal & Ibu Wahyuning Utami
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Detail Acara</h2>
+
+<p>Akad Nikah</p>
+
+<p>12 Desember 2026 | 08:00 WIB</p>
+
+<p>Resepsi</p>
+
+<p>12 Desember 2026 | 11:00 WIB</p>
+
+</section>
+
+<section>
+
+<h2>Galeri Foto</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+
+<img src="foto2.jpg">
+
+<img src="foto3.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Wedding Gift</h2>
+
+<p>Bagi yang ingin memberikan hadiah</p>
+
+<div class="rekening">
+
+<p><b>BCA</b></p>
+
+<p id="rek">8465633341</p>
+
+<p id="namaRek">a.n Khoirani Amalia Dewi</p>
+
+<button onclick="copyRek()">Copy Rekening</button>
+
+</div>
+
+</section>
+
+<section>
+
+<p>
+
+Merupakan suatu kehormatan bagi kami apabila
+Bapak/Ibu/Saudara/i berkenan hadir.
+
+</p>
+
+<h3>Ricko & Amel</h3>
+
+</section>
+
+</div>
+
+<script>
+
+/* BUKA UNDANGAN */
+
+function bukaUndangan(){
+
+document.getElementById("isi").scrollIntoView({behavior:'smooth'});
+
+document.getElementById("musik").play();
+
+}
+
+/* COUNTDOWN */
+
+var tanggal = new Date("Dec 12, 2026 08:00:00").getTime();
+
+setInterval(function(){
+
+var sekarang = new Date().getTime();
+
+var selisih = tanggal - sekarang;
+
+var hari = Math.floor(selisih/(1000*60*60*24));
+
+var jam = Math.floor((selisih%(1000*60*60*24))/(1000*60*60));
+
+var menit = Math.floor((selisih%(1000*60*60))/(1000*60));
+
+document.getElementById("countdown").innerHTML =
+hari+" Hari "+jam+" Jam "+menit+" Menit";
+
+},1000);
+
+/* COPY REKENING */
+
+function copyRek(){
+
+var rek=document.getElementById("rek").innerText;
+
+var nama=document.getElementById("namaRek").innerText;
+
+navigator.clipboard.writeText("BCA "+rek+" "+nama);
+
+alert("Rekening berhasil disalin");
+
+}
+
+/* NAMA TAMU */
+
+var url = new URLSearchParams(window.location.search);
+
+var tamu = url.get('to');
+
+if(tamu){
+
+document.getElementById("namaTamu").innerText=tamu;
+
+}
+
+/* DAUN JATUH */
+
+setInterval(function(){
+
+var daun=document.createElement("div");
+
+daun.classList.add("daun");
+
+var list=["🍃","🌿","🍂"];
+
+daun.innerHTML=list[Math.floor(Math.random()*3)];
+
+daun.style.left=Math.random()*100+"vw";
+
+daun.style.fontSize=(Math.random()*15+15)+"px";
+
+daun.style.animationDuration=(Math.random()*6+6)+"s";
+
+document.body.appendChild(daun);
+
+setTimeout(()=>{daun.remove();},12000);
+
+},700);
+
+</script>
+
+</body>
+</html>
